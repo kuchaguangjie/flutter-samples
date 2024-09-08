@@ -21,10 +21,12 @@ class PlatformWidget extends StatelessWidget {
   Widget build(context) {
     assert(
         defaultTargetPlatform == TargetPlatform.android ||
+            defaultTargetPlatform == TargetPlatform.linux ||
             defaultTargetPlatform == TargetPlatform.iOS,
         'Unexpected platform $defaultTargetPlatform');
     return switch (defaultTargetPlatform) {
       TargetPlatform.android => androidBuilder(context),
+      TargetPlatform.linux => androidBuilder(context),
       TargetPlatform.iOS => iosBuilder(context),
       _ => const SizedBox.shrink()
     };
