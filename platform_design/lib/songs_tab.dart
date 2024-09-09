@@ -10,6 +10,7 @@ import 'song_detail_tab.dart';
 import 'utils.dart';
 import 'widgets.dart';
 
+// 侧边导航按钮 (android), 点击滑出导航.
 class SongsTab extends StatefulWidget {
   static const title = 'Songs';
   static const androidIcon = Icon(Icons.music_note);

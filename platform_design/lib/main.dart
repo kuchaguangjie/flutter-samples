@@ -49,7 +49,9 @@ class MyAdaptingApp extends StatelessWidget {
 // These differences are also subjective and have more than one 'right' answer
 // depending on the app and content.
 class PlatformAdaptingHomePage extends StatefulWidget {
-  const PlatformAdaptingHomePage({super.key});
+  const PlatformAdaptingHomePage({
+    super.key,
+  });
 
   @override
   State<PlatformAdaptingHomePage> createState() =>
@@ -131,6 +133,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
   }
 }
 
+// 侧边栏 (android), 点击按钮后, 从左边滑出, 显示导航.
 class _AndroidDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
