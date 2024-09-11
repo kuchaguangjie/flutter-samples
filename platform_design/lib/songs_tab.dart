@@ -10,7 +10,6 @@ import 'song_detail_tab.dart';
 import 'utils.dart';
 import 'widgets.dart';
 
-// 侧边导航按钮 (android), 点击滑出导航.
 class SongsTab extends StatefulWidget {
   static const title = 'Songs';
   static const androidIcon = Icon(Icons.music_note);
@@ -18,6 +17,7 @@ class SongsTab extends StatefulWidget {
 
   const SongsTab({super.key, this.androidDrawer});
 
+  // 侧边导航按钮 (android), 点击滑出导航.
   final Widget? androidDrawer;
 
   @override
@@ -25,7 +25,7 @@ class SongsTab extends StatefulWidget {
 }
 
 class _SongsTabState extends State<SongsTab> {
-  static const _itemsLength = 50;
+  static const _itemsLength = 10;
 
   final _androidRefreshKey = GlobalKey<RefreshIndicatorState>();
 
@@ -39,10 +39,12 @@ class _SongsTabState extends State<SongsTab> {
   }
 
   void _setData() {
+    // generate color & name,
     colors = getRandomColors(_itemsLength);
     songNames = getRandomNames(_itemsLength);
   }
 
+  // refresh data with 2s deplay,
   Future<void> _refreshData() {
     return Future.delayed(
       // This is just an arbitrary delay that simulates some network activity.
@@ -51,6 +53,7 @@ class _SongsTabState extends State<SongsTab> {
     );
   }
 
+  // 侧边栏 导航
   Widget _listBuilder(BuildContext context, int index) {
     if (index >= _itemsLength) return Container();
 
@@ -83,6 +86,7 @@ class _SongsTabState extends State<SongsTab> {
     );
   }
 
+  // 切换 os 平台,
   void _togglePlatform() {
     if (defaultTargetPlatform == TargetPlatform.iOS) {
       debugDefaultTargetPlatformOverride = TargetPlatform.android;
@@ -110,6 +114,7 @@ class _SongsTabState extends State<SongsTab> {
   // ===========================================================================
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
+      // 顶部 工具栏
       appBar: AppBar(
         title: const Text(SongsTab.title),
         actions: [
