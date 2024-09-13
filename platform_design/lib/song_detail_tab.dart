@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'widgets.dart';
 
+/// song 单个 详情,
 /// Page shown when a card in the songs tab is tapped.
 ///
 /// On Android, this page sits at the top of your app. On iOS, this page is on
@@ -31,6 +32,7 @@ class SongDetailTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          // 播放按钮区域
           Hero(
             tag: id,
             child: HeroAnimatingSongCard(
@@ -55,6 +57,7 @@ class SongDetailTab extends StatelessWidget {
             height: 0,
             color: Colors.grey,
           ),
+          // 灰色区域
           Expanded(
             child: ListView.builder(
               itemCount: 10,
