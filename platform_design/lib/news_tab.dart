@@ -22,7 +22,7 @@ class NewsTab extends StatefulWidget {
 }
 
 class _NewsTabState extends State<NewsTab> {
-  static const _itemsLength = 20;
+  static const _itemsLength = 7;
 
   late final List<Color> colors;
   late final List<String> titles;
